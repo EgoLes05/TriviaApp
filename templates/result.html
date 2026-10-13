@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container results">
+        <h1>Quiz Completed!</h1>
+
+        <h2>Your Score</h2>
+        <p class="score">{{ score }} / {{ total }}</p>
+
+        <p>
+            {% if score == total %}
+                Excellent work!
+            {% elif score >= total / 2 %}
+                Good job! Keep learning.
+            {% else %}
+                Keep practicing. You can improve!
+            {% endif %}
+        </p>
+
+        <a href="{{ url_for('home') }}" class="button">
+            Play Again
+        </a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Trivia</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>Cloud Trivia</h1>
+        <p>Test your knowledge!</p>
+
+        <form action="{{ url_for('submit') }}" method="POST">
+            {% for question in questions %}
+                <div class="question-card">
+                    <h3>{{ loop.index }}. {{ question.question }}</h3>
+
+                    {% for option in question.options %}
+                        <label>
+                            <input type="radio"
+                                   name="{{ question.id }}"
+                                   value="{{ option }}"
+                                   required>
+                            {{ option }}
+                        </label>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            <button type="submit">Submit Answers</button>
+        </form>
+    </main>
+</body>
+</html>
