@@ -48,6 +48,81 @@ questions = [
             "Host Transfer Protocol"
         ],
         "answer": "HyperText Transfer Protocol"
+    },
+
+    {
+        "id": 5,
+        "question": "What does the '2' in EC2 stand for?",
+        "options": [
+            "Elastic Compute Cloud (Two Cs)",
+            "Second Generation Cloud",
+            "Dual Core Processor",
+            "Two Factor Authentication"
+        ],
+        "answer": "Elastic Compute Cloud (Two Cs)"
+    },
+
+    {
+        "id": 6,
+        "question": "Which EC2 purchasing option offers up to a 90% discount by utilizing spare AWS capacity?",
+        "options": [
+            "On-Demand Instances",
+            "Reserved Instances",
+            "Dedicated Hosts",
+            "Spot Instances"
+        ],
+        "answer": "Spot Instances"
+    },
+
+
+    {
+        "id": 7,
+        "question": "What AWS hardware innovation offloads networking and storage tasks to give EC2 instances near bare-metal performance?",
+        "options": [
+            "AWS Nitro System",
+            "Amazon Xen Hypervisor",
+            "AWS Outposts",
+            "Amazon Elastic Block Store"
+        ],
+        "answer": "AWS Nitro System"
+    },
+
+
+    {
+        "id": 8,
+        "question": "In the EC2 instance name 'm6g.xlarge', what does the 'g' represent?",
+        "options": [
+            "General Purpose",
+            "Graphics Optimization",
+            "Amazon Graviton Processor",
+            "Gigabit Networking"
+        ],
+        "answer": "Amazon Graviton Processor"
+    },
+
+
+    {
+        "id": 9,
+        "question": "Which foundational cloud service model provides users with direct access to virtual machines and networking infrastructure?",
+        "options": [
+            "SaaS (Software as a Service)",
+            "PaaS (Platform as a Service)",
+            "IaaS (Infrastructure as a Service)",
+            "FaaS (Function as a Service)"
+        ],
+        "answer": "IaaS (Infrastructure as a Service)"
+    },
+
+    {
+        "id": 10,
+    "question": "What is the name of the persistent block storage service typically used as the primary hard drive for an EC2 instance?",
+    "options": [
+        "Amazon S3",
+        "Amazon EBS (Elastic Block Store)",
+        "Amazon EFS (Elastic File System)",
+        "Amazon Instance Store"
+    ],
+    "answer": "Amazon EBS (Elastic Block Store)"
     }
 ]
 
