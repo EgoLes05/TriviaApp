@@ -11,9 +11,20 @@
 <body>
     <main class="container">
         <h1>Cloud Computing Trivia</h1>
+        <p>Welcome, {{ current_user.username }}!</p>
+
+        <form action="{{ url_for('logout') }}" method="POST">
+            <input type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token() }}">
+            <button type="submit">Log Out</button>
+        </form>
         <p>Test your knowledge!</p>
 
         <form action="{{ url_for('submit') }}" method="POST">
+            <input type="hidden"
+       name="csrf_token"
+       value="{{ csrf_token() }}">
             {% for question in questions %}
                 <div class="question-card">
                     <h3>{{ loop.index }}. {{ question.question }}</h3>
