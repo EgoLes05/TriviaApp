@@ -168,3 +168,43 @@ button:hover, .button:hover {
         padding: 25px 20px;
     }
 }
+
+
+/* Day 3 - Quiz history and leaderboard */
+
+.score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.score-table th,
+.score-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.score-table th {
+    background: #2563eb;
+    color: white;
+}
+
+.score-table td {
+    color: #1f2937;
+}
+
+.score-table tr:hover td {
+    background: #f3f4f6;
+}
+
+@media (max-width: 480px) {
+    .score-table th,
+    .score-table td {
+        padding: 9px;
+        font-size: 13px;
+    }
+}

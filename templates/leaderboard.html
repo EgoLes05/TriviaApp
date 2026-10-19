@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Trivia Leaderboard</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>🏆 Trivia Leaderboard</h1>
+
+        {% if rankings %}
+            <table class="score-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Best Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in rankings %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ player.username }}</td>
+                            <td>
+                                {{ player.score }} /
+                                {{ player.total }}
+                                ({{ "%.0f"|format(player.percentage) }}%)
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No quiz results yet. Be the first to play!</p>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}" class="button">
+            Back to Quiz
+        </a>
+    </main>
+</body>
+</html>

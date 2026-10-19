@@ -244,11 +244,77 @@ def submit():
         if user_answer == question["answer"]:
             score += 1
 
+    # Create a quiz result for the logged-in user
+    result = QuizResult(
+        user_id=current_user.id,
+        score=score,
+        total_questions=len(questions)
+    )
+
+    # Save the result to PostgreSQL
+    db.session.add(result)
+    db.session.commit()            
+
     return render_template(
         "result.html",
         score=score,
         total=len(questions)
     )
+
+
+@app.route("/history")
+@login_required
+def history():
+    results = (
+        QuizResult.query
+        .filter_by(user_id=current_user.id)
+        .order_by(QuizResult.played_at.desc(), QuizResult.id.desc())
+        .all()
+    )
+
+    return render_template(
+        "history.html",
+        results=results
+    )
+
+
+@app.route("/leaderboard")
+@login_required
+def leaderboard():
+    # Get results and their associated users
+    results = QuizResult.query.all()
+
+    # Store each player's best result
+    best_results = {}
+
+    for result in results:
+        user_id = result.user_id
+        percentage = (
+            result.score / result.total_questions * 100
+        )
+
+        if (
+            user_id not in best_results
+            or percentage > best_results[user_id]["percentage"]
+        ):
+            best_results[user_id] = {
+                "username": result.user.username,
+                "score": result.score,
+                "total": result.total_questions,
+                "percentage": percentage
+            }
+
+    rankings = sorted(
+        best_results.values(),
+        key=lambda player: player["percentage"],
+        reverse=True
+    )
+
+    return render_template(
+        "leaderboard.html",
+        rankings=rankings
+    )
+
 
 
 if __name__ == "__main__":
