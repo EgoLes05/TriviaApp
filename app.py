@@ -146,7 +146,65 @@ questions = [
         "Amazon Instance Store"
     ],
     "answer": "Amazon EBS (Elastic Block Store)"
+    },
+
+
+    {
+        "id": 11,
+        "question": "What is cloud computing?",
+        "options": [
+            "Building physical computers",
+            "Delivering computing services over the internet",
+            "Storing files only on local hard drives",
+            "Creating websites without servers"
+        ],
+        "answer": "Delivering computing services over the internet"
+    },
+    {
+        "id": 12,
+        "question": "What is the main purpose of Amazon S3?",
+        "options": [
+            "Running virtual machines",
+            "Managing user permissions",
+            "Storing and retrieving objects",
+            "Monitoring CPU performance"
+        ],
+        "answer": "Storing and retrieving objects"
+    },
+    {
+        "id": 13,
+        "question": "What does SaaS stand for?",
+        "options": [
+            "Storage as a Service",
+            "Software as a Service",
+            "Security as a System",
+            "Server as a Software"
+        ],
+        "answer": "Software as a Service"
+    },
+    {
+        "id": 14,
+        "question": "What is an AWS Region?",
+        "options": [
+            "A single virtual server",
+            "A geographical area containing AWS infrastructure",
+            "A security group",
+            "A type of database"
+        ],
+        "answer": "A geographical area containing AWS infrastructure"
+    },
+    {
+        "id": 15,
+        "question": "What is an AWS Availability Zone?",
+        "options": [
+            "A billing account",
+            "A software application",
+            "An isolated infrastructure location within a Region",
+            "A storage bucket"
+        ],
+        "answer": "An isolated infrastructure location within a Region"
     }
+    
 ]
 
 
